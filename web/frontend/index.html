@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Board</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Dockerized full-stack demo</p>
+          <h1>Task Board</h1>
+          <p class="intro">
+            A small frontend, API, and PostgreSQL database running together with Docker Compose.
+          </p>
+        </div>
+        <div class="status-pill" id="apiStatus">Checking API...</div>
+      </section>
+
+      <section class="workspace" aria-label="Task manager">
+        <form class="task-form" id="taskForm">
+          <label for="taskTitle">New task</label>
+          <div class="task-controls">
+            <input
+              id="taskTitle"
+              name="title"
+              type="text"
+              placeholder="Write a task..."
+              maxlength="120"
+              required
+            />
+            <button type="submit">Add</button>
+          </div>
+        </form>
+
+        <div class="toolbar">
+          <h2>Tasks</h2>
+          <button class="ghost-button" id="refreshButton" type="button">Refresh</button>
+        </div>
+
+        <ul class="task-list" id="taskList"></ul>
+        <p class="empty-state" id="emptyState">No tasks yet. Add the first one above.</p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
